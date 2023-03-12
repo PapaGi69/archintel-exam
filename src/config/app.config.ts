@@ -14,6 +14,5 @@ export default registerAs('app', () => ({
     port: Number.parseInt(process.env.APP_PORT) || 3003,
     protocol: process.env.APP_PROTOCOL,
   },
-  globalPrefix: '/ate', // If no subdomain is specified, add it
   kafkaEnabled: process.env.APP_KAFKA_ENABLED === 'true' || false,
 }));
