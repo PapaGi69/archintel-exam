@@ -3,6 +3,7 @@ import { registerAs } from '@nestjs/config';
 export default registerAs(
   'database',
   (): Record<string, any> => ({
+    mongodb: process.env.MONGO_DB,
     type: process.env.DATABASE_TYPE,
     host: process.env.DATABASE_HOST,
     name: process.env.DATABASE_NAME,

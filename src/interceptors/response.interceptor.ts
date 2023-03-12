@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface ResponseObject<T> {
-  timestamp: Date;
   statusCode: number;
   result: T;
 }
@@ -28,7 +27,6 @@ export class ResponseInterceptor<T>
 
     return next.handle().pipe(
       map((data) => ({
-        timestamp: new Date(),
         statusCode,
         result: data ?? {},
       })),

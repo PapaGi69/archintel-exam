@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "c31b4d78-767c-4ddd-ae6d-a85c5c5c9978",
+		"name": "ARCHINTEL EXAM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"exam@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ArchIntel\",\r\n    \"email\": \"archintel@gmail.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZXhhbSIsInN1YiI6IjY0MGRhM2UzY2IwZjI2ZjIyM2JjZWE1MSIsImlhdCI6MTY3ODYyMzg3OSwiZXhwIjoxNjc4NjI1Njc5fQ.Y2HKarrmrgXcZ8hCDtkBdjV2reebSh6gyBDFGBSF4LU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/users/640d9b2269fcc857a4cddf79",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"640d9b2269fcc857a4cddf79"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"UpdateTest\",\r\n    \"email\": \"update@gmail.com\",\r\n    \"phone\": \"22222222\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/640a04bac52a85e65305bb97",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"640a04bac52a85e65305bb97"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/users/640d73727b37e6db541636ae",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"640d73727b37e6db541636ae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Habit Substitution\",\r\n    \"date\": \"2022-03-12\",\r\n    \"summary\": \"In many cases, it can be more effective to replace your bad habit than to merely try to eliminate it.\",\r\n    \"content\": \"The beautiful thing about habit substitution is that you can build a good habit and break a bad one at the same time. One reader told me, “At home I would go out to my backyard to smoke, so I put a weight bench out there and every time I wanted to smoke I’d go out and do some reps instead. After that, my craving was reduced.”\",\r\n    \"status\": \"pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/article",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"article"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "640b0c22ddc16b88129febad",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get article by status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/articles?Status=published",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"articles"
+					],
+					"query": [
+						{
+							"key": "Status",
+							"value": "published"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get article by daterange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/articles?dateRange&endDate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"articles"
+					],
+					"query": [
+						{
+							"key": "dateRange",
+							"value": null
+						},
+						{
+							"key": "endDate",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete article by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/article/640cbcff22ec5d23cc32c511",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"article",
+						"640cbcff22ec5d23cc32c511"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
