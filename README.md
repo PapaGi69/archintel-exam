@@ -1,4 +1,4 @@
-# Rest-api
+# Rest-API
 
 By Reginald San Jose
 
